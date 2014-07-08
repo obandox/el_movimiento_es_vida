@@ -34,13 +34,13 @@ using System.Collections;
 -- EndGate01Prefab
 
 //TODO
-  Jugador: cazadora
-  Fantasma: estandar
-  Linterna: estandar
-  Arco: estandar
-  CajaAlmas: estandar
-  Alma: estandar
-  Templo: estandar
+  -Jugador: cazadora
+  -Fantasma: estandar
+  -Linterna: estandar
+  -Arco: estandar
+  -CajaAlmas: estandar
+  -Alma: estandar
+  -Templo: estandar
 
 
 */
