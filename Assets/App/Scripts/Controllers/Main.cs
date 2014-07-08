@@ -33,6 +33,15 @@ using System.Collections;
 -- Soul01Prefab
 -- EndGate01Prefab
 
+//TODO
+  Jugador: cazadora
+  Fantasma: estandar
+  Linterna: estandar
+  Arco: estandar
+  CajaAlmas: estandar
+  Alma: estandar
+  Templo: estandar
+
 
 */
 public class Main : MonoBehaviour {
