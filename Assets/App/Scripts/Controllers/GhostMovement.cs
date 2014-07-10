@@ -23,6 +23,7 @@ public class GhostMovement : MonoBehaviour {
 	}
 	
 
+
 	public IEnumerator BeginMovement(){
 		iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(pathsNames[pathToUse]), "time", time));
 		yield return null;
