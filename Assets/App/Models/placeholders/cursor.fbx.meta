@@ -1,36 +1,37 @@
 fileFormatVersion: 2
-guid: 54c9d21138c26b64197c0e5e0747b1c2
+guid: a100c5833ddfa8f45a4f59dc83ddd376
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
     100000: Armature
     100002: Bone
-    100004: Bone.001
-    100006: Bone.002
-    100008: Bone.003
-    100010: Bone.004
-    100012: Bone.005
-    100014: Bone.006
-    100016: Bone.007
-    100018: Bone.008
-    100020: Bone.009
+    100004: Bone_001
+    100006: Bone_002
+    100008: Bone_003
+    100010: Bone_004
+    100012: Bone_005
+    100014: Bone_006
+    100016: Bone_007
+    100018: Bone_008
+    100020: Bone_009
     100022: Cursor
     100024: //RootNode
     400000: Armature
     400002: Bone
-    400004: Bone.001
-    400006: Bone.002
-    400008: Bone.003
-    400010: Bone.004
-    400012: Bone.005
-    400014: Bone.006
-    400016: Bone.007
-    400018: Bone.008
-    400020: Bone.009
+    400004: Bone_001
+    400006: Bone_002
+    400008: Bone_003
+    400010: Bone_004
+    400012: Bone_005
+    400014: Bone_006
+    400016: Bone_007
+    400018: Bone_008
+    400020: Bone_009
     400022: Cursor
     400024: //RootNode
     4300000: Cursor
-    7400000: Pointer
+    7400000: Default Take
+    7400002: Pointer
     9500000: //RootNode
     13700000: Cursor
   materials:
@@ -49,17 +50,17 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Pointer
-      takeName: Pointer
+      name: Default Take
+      takeName: Default Take
       firstFrame: 0
-      lastFrame: 82
+      lastFrame: 249
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
-      cycleOffset: 3
+      cycleOffset: 0
       loop: 0
-      loopTime: 1
-      loopBlend: 1
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -78,32 +79,84 @@ ModelImporter:
         weight: 1
       - path: Armature/Bone
         weight: 1
-      - path: Armature/Bone/Bone.001
+      - path: Armature/Bone/Bone_001
         weight: 1
-      - path: Armature/Bone/Bone.001/Bone.002
+      - path: Armature/Bone/Bone_001/Bone_002
         weight: 1
-      - path: Armature/Bone.003
+      - path: Armature/Bone_003
         weight: 1
-      - path: Armature/Bone.003/Bone.004
+      - path: Armature/Bone_003/Bone_004
         weight: 1
-      - path: Armature/Bone.003/Bone.004/Bone.005
+      - path: Armature/Bone_003/Bone_004/Bone_005
         weight: 1
-      - path: Armature/Bone.006
+      - path: Armature/Bone_006
         weight: 1
-      - path: Armature/Bone.006/Bone.007
+      - path: Armature/Bone_006/Bone_007
         weight: 1
-      - path: Armature/Bone.006/Bone.007/Bone.008
+      - path: Armature/Bone_006/Bone_007/Bone_008
         weight: 1
-      - path: Armature/Bone.006/Bone.007/Bone.008/Bone.009
+      - path: Armature/Bone_006/Bone_007/Bone_008/Bone_009
         weight: 1
-      - path: Armature/Cursor
+      - path: Cursor
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Pointer
+      takeName: Pointer
+      firstFrame: -1
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_001
+        weight: 1
+      - path: Armature/Bone/Bone_001/Bone_002
+        weight: 1
+      - path: Armature/Bone_003
+        weight: 1
+      - path: Armature/Bone_003/Bone_004
+        weight: 1
+      - path: Armature/Bone_003/Bone_004/Bone_005
+        weight: 1
+      - path: Armature/Bone_006
+        weight: 1
+      - path: Armature/Bone_006/Bone_007
+        weight: 1
+      - path: Armature/Bone_006/Bone_007/Bone_008
+        weight: 1
+      - path: Armature/Bone_006/Bone_007/Bone_008/Bone_009
+        weight: 1
+      - path: Cursor
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: .00999999978
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
