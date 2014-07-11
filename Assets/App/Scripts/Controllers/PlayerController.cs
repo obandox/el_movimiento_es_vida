@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetAxis ("Vertical") > 0)
 				vel = new Vector3 (Input.GetAxis ("Horizontal") * speedFowardPerSec / 2, 0, Input.GetAxis ("Vertical") * speedFowardPerSec);
 		else
-				vel = new Vector3 (Input.GetAxis ("Horizontal") * speedBackwardPerSec / 2, 0, Input.GetAxis ("Vertical") * speedBackwardPerSec);
+			    vel = new Vector3 (Input.GetAxis ("Horizontal") * speedFowardPerSec / 2, 0, Input.GetAxis ("Vertical") * speedBackwardPerSec);
 
 
 		var controller = GetComponent<CharacterController>();
