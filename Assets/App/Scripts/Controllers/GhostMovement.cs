@@ -11,18 +11,32 @@ public class GhostMovement : MonoBehaviour {
 	public string[] pathsNames;
 
 	public int pathToUse;
+	
+	public Transform player;
 
 	public int time;
+
 	
 
 	public GhostTypeMovement typeOfMovement;
 
+	private Transform childDefault = null;
+
 	// Use this for initialization
 	public IEnumerator Start () {
+		childDefault = transform.Search ("default");
+
 		yield return StartCoroutine(BeginMovement());
+
 	}
 	
-
+	
+	// Update is called once per frame
+	void Update () {
+		if (player != null && childDefault != null) {
+			childDefault.LookAt(player.position);
+		}
+	}
 
 	public IEnumerator BeginMovement(){
 		if(typeOfMovement == GhostTypeMovement.PingPongMovement){
