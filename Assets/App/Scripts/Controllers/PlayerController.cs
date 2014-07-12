@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
 	public float gravity = 9.8f;
 	private float vSpeed = 0; // current vertical velocity
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		Shared = this;
 	}
 	

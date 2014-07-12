@@ -45,7 +45,12 @@ using System.Collections;
 
 */
 public class Main : MonoBehaviour {
+	
+	public static Main Shared;
 
+	void Awake(){
+		Shared = this;
+	}
 	// Use this
 	void Start () {
 	
