@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
-	
+
+	public static PlayerController Shared;
+
 	public float speedFowardPerSec  = 5; // units per second
 	public float speedBackwardPerSec  = 2; // units per second
 	public float jumpSpeed = 8;
@@ -10,7 +12,7 @@ public class PlayerController : MonoBehaviour {
 	private float vSpeed = 0; // current vertical velocity
 	// Use this for initialization
 	void Start () {
-		
+		Shared = this;
 	}
 	
 	// Update is called once per frame
