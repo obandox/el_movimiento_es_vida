@@ -45,6 +45,21 @@ using System.Collections;
 
 */
 public class Main : MonoBehaviour {
+	
+	public static Main Shared;
+
+	
+	public static int Arrows
+	{
+		get { return CrossbowController.Shared.arrows; }
+		set { CrossbowController.Shared.arrows = value; }
+	}
+
+	// Use this for initialization
+	void Awake () {
+		Shared = this;
+	}
+
 
 	// Use this
 	void Start () {

@@ -33,6 +33,9 @@ public class GhostMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (player == null)
+			player = PlayerController.Shared.transform;
+
 		if (player != null && childDefault != null) {
 			childDefault.LookAt(player.position);
 		}
