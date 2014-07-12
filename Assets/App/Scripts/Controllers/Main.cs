@@ -48,9 +48,19 @@ public class Main : MonoBehaviour {
 	
 	public static Main Shared;
 
-	void Awake(){
+	
+	public static int Arrows
+	{
+		get { return CrossbowController.Shared.arrows; }
+		set { CrossbowController.Shared.arrows = value; }
+	}
+
+	// Use this for initialization
+	void Awake () {
 		Shared = this;
 	}
+
+
 	// Use this
 	void Start () {
 	

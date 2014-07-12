@@ -2,7 +2,10 @@
 using System.Collections;
 
 public class CrossbowController : MonoBehaviour {
+	
+	public static CrossbowController Shared;
 
+	public int arrows = 10;
 	public float shootSpeede = 4.0f;
 	public Transform arrowPrefab;
 	public Transform crossBow;
@@ -41,12 +44,14 @@ public class CrossbowController : MonoBehaviour {
 			}
 
 			if(Input.GetButtonDown("Fire1")){
-
-				var bullet = Instantiate(arrowPrefab,crossBow.transform.position,Quaternion.identity) as Transform;
-				bullet.eulerAngles = crossBow.eulerAngles;
-				var rigidBody = bullet.GetComponent<Rigidbody>();
-				if(rigidBody!=null)            
-					rigidBody.velocity = crossBow.transform.TransformDirection(new Vector3(0, 0,shootSpeede));
+				if(arrows > 0){
+					arrows-=1;
+					var bullet = Instantiate(arrowPrefab,crossBow.transform.position,Quaternion.identity) as Transform;
+					bullet.eulerAngles = crossBow.eulerAngles;
+					var rigidBody = bullet.GetComponent<Rigidbody>();
+					if(rigidBody!=null)            
+						rigidBody.velocity = crossBow.transform.TransformDirection(new Vector3(0, 0,shootSpeede));
+				}
 				
 			}
 
