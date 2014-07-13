@@ -26,7 +26,12 @@ public class OverlookerController : MonoBehaviour {
 	}
 
 	public void Look(){
-		looking = true;
+		if(!looking){
+			Debug.Log("Sended");
+			Player.SendMessage("PlayLook");
+			looking = true;
+		}
+
 	}
 
 	public void Follow(){
