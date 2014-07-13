@@ -9,14 +9,23 @@ public class CrossbowController : MonoBehaviour {
 	public float shootSpeede = 4.0f;
 	public Transform arrowPrefab;
 	public Transform crossBow;
+	public Transform crossBowHolder;
 	public Transform cursor = null;
 	public Camera camera;
 	public float maxYAngle = 30.0f;
 	public float minYAngle = -0.0f;
+	public bool freezX = false;
+	public bool freezY = false;
+	public bool freezZ = false;
 
 	// Use this for initialization
 	void Start () {
-
+		if (crossBow == null) {
+			crossBow = transform;
+		}
+		if (crossBowHolder == null) {
+			crossBowHolder=crossBow;
+		}
 	}
 
 	// Update is called once per frame
@@ -26,8 +35,20 @@ public class CrossbowController : MonoBehaviour {
 		RaycastHit hit;
 		if (Physics.Raycast (ray, out hit, 100)) {
 			Vector3 targetPosition=new Vector3(hit.point.x, crossBow.position.y, hit.point.z);
-
-			crossBow.LookAt(targetPosition);
+			Vector3 eulers = crossBowHolder.eulerAngles;
+			crossBowHolder.LookAt(targetPosition);
+			
+			if(!freezX){
+				eulers.x = crossBowHolder.eulerAngles.x;
+			}			
+			if(!freezY){
+				eulers.y = crossBowHolder.eulerAngles.y;
+			}				
+			if(!freezZ){
+				eulers.z = crossBowHolder.eulerAngles.z;
+			}
+			
+			crossBowHolder.eulerAngles = eulers;
 
 			if(cursor!=null){
 				cursor.position = targetPosition;
