@@ -1,10 +1,13 @@
 using UnityEngine;
-using UnityEditor;
+#if UNITY_EDITOR
+	using UnityEditor;
+#endif
 using System.Collections;
 using System.Reflection;
 
 // Cartoon FX Easy Editor - (c) 2013, Jean Moreno
 
+#if UNITY_EDITOR
 public class CFXEasyEditor : EditorWindow
 {
 	static private CFXEasyEditor SingleWindow;
@@ -1329,3 +1332,4 @@ public class CFXEasyEditor : EditorWindow
 		return scaledMesh;
 	}
 }
+#endif

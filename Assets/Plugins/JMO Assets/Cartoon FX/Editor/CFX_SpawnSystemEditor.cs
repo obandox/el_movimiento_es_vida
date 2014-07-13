@@ -1,4 +1,5 @@
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
 using System.Collections;
 
@@ -65,3 +66,5 @@ public class CFX_SpawnSystemEditor : Editor
 		}
 	}
 }
+
+#endif
