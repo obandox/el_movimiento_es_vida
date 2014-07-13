@@ -160,8 +160,9 @@ ModelImporter:
     4300004: capelli_001
     7400000: Default Take
     7400002: Idle
-    7400004: FleurIdle
+    7400004: FleurRUN
     7400006: FleurIdle0
+    7400008: FleurRUN0
     9500000: //RootNode
     13700000: capelli_001
     13700002: Plane_001
@@ -182,9 +183,9 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: FleurIdle
-      takeName: FleurIdle
-      firstFrame: 0
+      name: FleurRUN0
+      takeName: FleurRUN
+      firstFrame: -1
       lastFrame: 198
       wrapMode: 0
       orientationOffsetY: 0
@@ -378,7 +379,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0
