@@ -29,15 +29,6 @@ public class CrossbowController : MonoBehaviour {
 
 			crossBow.LookAt(targetPosition);
 
-			Vector3 eulerAngles = crossBow.eulerAngles;
-
-			if(eulerAngles.y > 180 && eulerAngles.y < 270)
-				eulerAngles.y = 270;
-			else if (eulerAngles.y < 180 &&  eulerAngles.y > 90)
-				eulerAngles.y = 90;
-
-			crossBow.eulerAngles = eulerAngles;
-
 			if(cursor!=null){
 				cursor.position = targetPosition;
 				cursor.LookAt(crossBow.position);
