@@ -10,7 +10,7 @@ public class AudioController : MonoBehaviour {
 	 * 2- Tengo cerca a un PathGhost
 	 * 3- Mate un fantasma
 	 * 4- Me mori yo.
-	 * 
+	 * 5- Arroje flecha.
 	 * */
 
 	public AudioClip[] audios;
@@ -36,6 +36,30 @@ public class AudioController : MonoBehaviour {
 	public void PlayTeleport(){
 		Debug.Log("PlayTeleport");
 		Source.clip = audios[1];
+		Source.Play();
+	}
+
+	public void PlayClose(){
+		Debug.Log("PlayClose");
+		Source.clip = audios[2];
+		Source.Play();
+	}
+
+	public void PlayKill(){
+		Debug.Log("PlayKill");
+		Source.clip = audios[3];
+		Source.Play();
+	}
+
+	public void PlayDie(){
+		Debug.Log("PlayDie");
+		Source.clip = audios[4];
+		Source.Play();
+	}
+
+	public void PlayArrow(){
+		Debug.Log("PlayArrow");
+		Source.clip = audios[5];
 		Source.Play();
 	}
 }

@@ -50,7 +50,7 @@ public class TeleportController : MonoBehaviour {
 	public IEnumerator TeleportWorker(){
 		yield return new WaitForSeconds(1f);
 		if(looking){
-			transform.position = new Vector3(Player.transform.position.x+(Random.Range(0, 3)), Player.transform.position.y, Player.transform.position.z-4);
+			transform.position = new Vector3(Player.transform.position.x+(Random.Range(0, 3)), Player.transform.position.y, Player.transform.position.z-6);
 			Player.SendMessage("PlayTeleport");
 			following = true;
 			GameObject thisAura = Instantiate(Aura, transform.position, transform.rotation) as GameObject;

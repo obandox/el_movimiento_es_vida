@@ -37,6 +37,7 @@ public class CrossbowController : MonoBehaviour {
 			if(Input.GetButtonDown("Fire1")){
 				if(arrows > 0){
 					arrows-=1;
+					gameObject.SendMessage("PlayArrow");
 					var bullet = Instantiate(arrowPrefab,crossBow.transform.position,Quaternion.identity) as Transform;
 					bullet.eulerAngles = crossBow.eulerAngles;
 					var rigidBody = bullet.GetComponent<Rigidbody>();
