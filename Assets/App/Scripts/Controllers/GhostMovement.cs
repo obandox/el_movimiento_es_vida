@@ -42,11 +42,14 @@ public class GhostMovement : MonoBehaviour {
 	}
 
 	public IEnumerator BeginMovement(){
-		if(typeOfMovement == GhostTypeMovement.PingPongMovement){
-		iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(pathsNames[pathToUse]), "time", time, "looptype", iTween.LoopType.pingPong, "easetype", iTween.EaseType.linear));
-			iTween.RotateTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(pathsNames[pathToUse])));
-		}else if(typeOfMovement == GhostTypeMovement.CircularMovement)
-			iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(pathsNames[pathToUse]), "time", time, "looptype", iTween.LoopType.loop, "easetype", iTween.EaseType.linear ));
+		if (pathsNames.Length > 0) {			
+			if(typeOfMovement == GhostTypeMovement.PingPongMovement){
+				iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(pathsNames[pathToUse]), "time", time, "looptype", iTween.LoopType.pingPong, "easetype", iTween.EaseType.linear));
+				iTween.RotateTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(pathsNames[pathToUse])));
+			}else if(typeOfMovement == GhostTypeMovement.CircularMovement)
+				iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(pathsNames[pathToUse]), "time", time, "looptype", iTween.LoopType.loop, "easetype", iTween.EaseType.linear ));
+		}
+
 		yield return null;
 	}
 	
