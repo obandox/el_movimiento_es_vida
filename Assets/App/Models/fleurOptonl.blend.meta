@@ -164,6 +164,7 @@ ModelImporter:
     7400006: FleurIdle0
     7400008: FleurRUN0
     7400010: FleurRUN_001
+    7400012: FleurIDLE
     9500000: //RootNode
     13700000: capelli_001
     13700002: Plane_001
@@ -184,8 +185,8 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: FleurRUN_001
-      takeName: FleurRUN_001
+      name: FleurIDLE
+      takeName: FleurIDLE
       firstFrame: -1
       lastFrame: 149
       wrapMode: 0
