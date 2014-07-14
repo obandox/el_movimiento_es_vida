@@ -41,9 +41,12 @@ public class SoulController : MonoBehaviour {
 		if(tag == "Soulbox"){
 			if (Souls <= 0) Souls = 1;
 			Transform child = hit.collider.transform.Search ("Particles");
-			Destroy(child.gameObject);
-			Souls+=AddSoulbox;
-			SoulboxCount+=1;
+			if(child != null){
+				Destroy(child.gameObject);
+				Souls+=AddSoulbox;
+				SoulboxCount+=1;
+				Camera.main.SendMessage("feedback");
+			}
 		}
 	}
 

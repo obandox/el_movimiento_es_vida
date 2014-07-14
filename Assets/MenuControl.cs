@@ -14,5 +14,7 @@ public class MenuControl : MonoBehaviour {
 		if(Input.GetKey(KeyCode.Space)){
 			AutoFade.LoadLevel(goTO, 1f, 0.5f, Color.black);
 		}
+
+		if(Input.GetKey(KeyCode.C))AutoFade.LoadLevel("Creditos", 1f, 0.5f, Color.black);
 	}
 }

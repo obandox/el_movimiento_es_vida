@@ -20,6 +20,7 @@ public class OverlookerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		if(myGhost == null) return;
 		 myGhost.transform.LookAt(Player.transform.position);
 
 		if(following) myGhost.transform.Translate(Vector3.forward*speed*Time.deltaTime);
@@ -33,6 +34,7 @@ public class OverlookerController : MonoBehaviour {
 		}
 
 	}
+
 
 	public void Follow(){
 		following = true;
