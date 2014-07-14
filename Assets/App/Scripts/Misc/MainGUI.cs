@@ -8,7 +8,6 @@ public class MainGUI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Screen.showCursor = false;
 
 	}
 	
