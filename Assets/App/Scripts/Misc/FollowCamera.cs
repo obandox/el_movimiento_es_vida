@@ -66,8 +66,6 @@ public class FollowCamera : MonoBehaviour {
 		
 		// Set the height of the camera
 		transform.position = new Vector3(transform.position.x,currentHeight,transform.position.z);
-		
-		// Always look at the target
-		transform.LookAt(localTarget);
+
 	}
 }
