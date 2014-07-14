@@ -47,12 +47,13 @@ using System.Collections;
 public class Main : MonoBehaviour {
 	
 	public static Main Shared;
-
 	
-	public static int Arrows
-	{
-		get { return CrossbowController.Shared.arrows; }
-		set { CrossbowController.Shared.arrows = value; }
+	public void GameOver(){
+		
+	}
+
+	public void EndGame(){
+		
 	}
 
 	// Use this for initialization

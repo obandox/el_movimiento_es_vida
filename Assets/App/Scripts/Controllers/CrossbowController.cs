@@ -4,7 +4,9 @@ using System.Collections;
 public class CrossbowController : MonoBehaviour {
 	
 	public static CrossbowController Shared;
-
+	void Awake()  {
+		Shared = this;
+	}
 	public int arrows = 10;
 	public float shootSpeede = 4.0f;
 	public Transform arrowPrefab;
@@ -18,6 +20,8 @@ public class CrossbowController : MonoBehaviour {
 	public bool freezY = false;
 	public bool freezZ = false;
 
+
+
 	// Use this for initialization
 	void Start () {
 		if (crossBow == null) {
@@ -25,6 +29,14 @@ public class CrossbowController : MonoBehaviour {
 		}
 		if (crossBowHolder == null) {
 			crossBowHolder=crossBow;
+		}
+	}
+	
+	void OnControllerColliderHit(ControllerColliderHit hit) {
+		string tag = hit.collider.tag;
+		if(tag == "Arrow"){
+			Destroy(hit.collider.gameObject);
+			arrows += 1;
 		}
 	}
 
