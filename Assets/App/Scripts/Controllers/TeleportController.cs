@@ -22,6 +22,7 @@ public class TeleportController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		if(Ghost == null) return;
 		if (looking) Ghost.transform.LookAt(Player.transform.position);
 		if(following) Ghost.transform.Translate(Vector3.forward*speed*Time.deltaTime);
 	}

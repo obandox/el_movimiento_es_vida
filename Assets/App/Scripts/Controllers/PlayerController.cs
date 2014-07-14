@@ -39,4 +39,15 @@ public class PlayerController : MonoBehaviour {
 	  // convert vel to displacement and Move the character:
 	  controller.Move(vel * Time.deltaTime);
 	}
+
+	public void OnTriggerEnter(Collider coli){
+		GameObject GC = GameObject.FindGameObjectWithTag("GameController");
+		if(coli.gameObject.tag == "Ghost"){
+			GC.SendMessage("GameOver");
+		}
+		if(coli.gameObject.tag == "Temple"){
+			if(SoulController.Shared.SoulboxCount<7) Camera.main.SendMessage("feedback");
+			else GC.SendMessage("EndGame");
+		}
+	}
 }

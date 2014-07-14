@@ -49,11 +49,11 @@ public class Main : MonoBehaviour {
 	public static Main Shared;
 	
 	public void GameOver(){
-		
+		AutoFade.LoadLevel("BadEnd", 1f, 1f, Color.black);
 	}
 
 	public void EndGame(){
-		
+		AutoFade.LoadLevel("BadEnd", 1f, 1f, Color.white);
 	}
 
 	// Use this for initialization
