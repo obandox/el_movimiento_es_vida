@@ -14,7 +14,7 @@ public class HelperPlane : MonoBehaviour {
 	}
 	
 	public void OnTriggerEnter(Collider Colli){
-		Debug.Log(Colli.tag);
+
 		if(Colli.gameObject.tag == "Player"){
 			myRenderer.enabled = true;
 		}
@@ -23,6 +23,7 @@ public class HelperPlane : MonoBehaviour {
 	public void OnTriggerExit(Collider Colli){
 		if(Colli.gameObject.tag == "Player"){
 			myRenderer.enabled = false;
+			Destroy(gameObject,3);
 		}
 	}
 }
