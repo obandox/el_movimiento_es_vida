@@ -29,7 +29,14 @@ public class GhostMovement : MonoBehaviour {
 		yield return StartCoroutine(BeginMovement());
 
 	}
-	
+
+	void OnCollisionEnter(Collision collision) {
+		Debug.Log(collision.collider.tag);
+		if (collision.collider.tag == "Arrow") {
+			Instantiate(SoulController.Shared.SoulPrefab,transform.position,Quaternion.identity);
+			Destroy(gameObject);
+		}
+	}
 
 	// Update is called once per frame
 	void Update () {

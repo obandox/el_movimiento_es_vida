@@ -3,8 +3,12 @@ using System.Collections;
 
 public class SoulController : MonoBehaviour {
 
-	public static SoulController Shared;
-	
+	public static SoulController Shared;	
+	void Awake(){
+		Shared = this;
+		
+	}
+
 	public float defaultSouls = 30;
 
 	public float Souls = 30;
@@ -17,17 +21,14 @@ public class SoulController : MonoBehaviour {
 	public int SoulCount = 0;
 	public int SoulboxCount = 0;
 	
-	
+	public GameObject SoulPrefab;
+
 	public Light[] Lights;
 	private Hashtable hashLights= new Hashtable();
 
 	public GameObject[] DisableOnDark;
 
 
-	void Awake(){
-		Shared = this;
-
-	}
 	
 	void OnControllerColliderHit(ControllerColliderHit hit) {
 		string tag = hit.collider.tag;		
