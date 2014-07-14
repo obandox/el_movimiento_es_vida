@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour {
 	
 	void OnControllerColliderHit(ControllerColliderHit hit) {
 		string tag = hit.collider.tag;
+		Debug.Log (tag+" "+hit.transform.name);
 		GameObject GC = GameObject.FindGameObjectWithTag("GameController");
 		if(tag == "Ghost"){
 			GC.SendMessage("GameOver");

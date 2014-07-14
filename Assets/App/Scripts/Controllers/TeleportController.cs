@@ -18,6 +18,7 @@ public class TeleportController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Player = GameObject.FindGameObjectWithTag("Player");
+		Ghost = this.gameObject;
 	}
 	
 	// Update is called once per frame
@@ -29,23 +30,34 @@ public class TeleportController : MonoBehaviour {
 
 	public void OnTriggerEnter(Collider colli){
 		if(colli.gameObject.tag == "Player"){
-			StopAllCoroutines();
-			looking = true;
-			StartCoroutine(TeleportWorker());
+			EnterPlayer();
 		}
 
 
 	}
 
 	public void OnTriggerExit(Collider colli){
-		looking = false;
-		StopAllCoroutines();
-		StartCoroutine(StopFollow());
+		if(colli.gameObject.tag == "Player"){
+			ExitPlayer();
+		}
+
 	}
 
 	public IEnumerator StopFollow(){
 		yield return new WaitForSeconds(2f);
 		following = false;
+	}
+
+	public void EnterPlayer(){
+		StopAllCoroutines();
+		looking = true;
+		StartCoroutine(TeleportWorker());
+	}
+	public void ExitPlayer(){
+		looking = false;
+		StopAllCoroutines();
+		StartCoroutine(StopFollow());
+
 	}
 
 	public IEnumerator TeleportWorker(){

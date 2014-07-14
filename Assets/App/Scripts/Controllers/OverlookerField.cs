@@ -8,14 +8,8 @@ public class OverlookerField : MonoBehaviour {
 
 	public void OnTriggerEnter(Collider colli){
 		if(colli.transform.tag == "Player"){
-		transform.parent.gameObject.SendMessage(enterAction);
-		gameObject.GetComponent<SphereCollider>().enabled = false;
+			transform.parent.gameObject.GetComponent<OverlookerController>().Follow();
 		}
 	}
 
-	public void OnTriggerExit(Collider colli){
-		if(colli.transform.tag == "Player"){
-		transform.parent.gameObject.SendMessage(exitAction);
-		}
-	}
 }

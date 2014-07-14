@@ -16,6 +16,7 @@ public class OverlookerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Player = GameObject.FindGameObjectWithTag("Player");
+		myGhost = this.gameObject;
 	}
 	
 	// Update is called once per frame

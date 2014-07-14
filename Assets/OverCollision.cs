@@ -15,10 +15,13 @@ public class OverCollision : MonoBehaviour {
 
 	
 	void OnCollisionEnter(Collision collision) {
-		Debug.Log(collision.collider.tag);
+
 		if (collision.collider.tag == "Arrow") {
-			Instantiate(SoulController.Shared.SoulPrefab,transform.position,Quaternion.identity);
-			Destroy(gameObject);
+						Instantiate (SoulController.Shared.SoulPrefab, transform.position, Quaternion.identity);
+						Destroy (gameObject);
+		} else 
+		if (collision.collider.tag == "Player") {
+			Main.Shared.GameOver();
 		}
 	}
 }
