@@ -47,9 +47,14 @@ using System.Collections;
 public class Main : MonoBehaviour {
 	
 	public static Main Shared;
-	
+
+	public bool callGameOver = false;
 	public void GameOver(){
+		if (callGameOver)
+						return;
+		PlayerController.Shared.gameObject.SendMessage ("PlayDie");
 		AutoFade.LoadLevel("BadEnd", 1f, 1f, Color.black);
+		callGameOver = true;
 	}
 
 	public void EndGame(){

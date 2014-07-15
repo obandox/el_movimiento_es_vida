@@ -51,9 +51,13 @@ public class AudioController : MonoBehaviour {
 		Source.clip = audios[4];
 		Source.Play();
 	}
-
+	
 	public void PlayArrow(){
 		Source.clip = audios[5];
+		Source.Play();
+	}
+	public void PlayGameOver(){
+		Source.clip = audios[6];
 		Source.Play();
 	}
 }

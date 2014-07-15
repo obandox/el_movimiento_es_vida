@@ -39,11 +39,7 @@ public class PlayerController : MonoBehaviour {
 	  // convert vel to displacement and Move the character:
 	  controller.Move(vel * Time.deltaTime);
 	}
-	
-	
-	void OnControllerColliderHit(ControllerColliderHit hit) {
-		string tag = hit.collider.tag;
-		Debug.Log (tag+" "+hit.transform.name);
+	void OnCollision(string tag){
 		GameObject GC = GameObject.FindGameObjectWithTag("GameController");
 		if(tag == "Ghost"){
 			GC.SendMessage("GameOver");
@@ -52,5 +48,18 @@ public class PlayerController : MonoBehaviour {
 			if(SoulController.Shared.SoulboxCount<7) Camera.main.SendMessage("feedback");
 			else GC.SendMessage("EndGame");
 		}
+	} 
+	
+	void OnCollisionEnter(Collision collision) {
+		
+		OnCollision (collision.collider.tag);
+	}
+	public void OnTriggerEnter(Collider coli){
+		OnCollision (coli.gameObject.tag);
+	}
+	
+	void OnControllerColliderHit(ControllerColliderHit hit) {
+		string tag = hit.collider.tag;
+		OnCollision (tag);
 	 }
 }

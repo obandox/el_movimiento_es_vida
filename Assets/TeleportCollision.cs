@@ -18,6 +18,9 @@ public class TeleportCollision : MonoBehaviour {
 		if (collision.collider.tag == "Arrow") {
 			Instantiate(SoulController.Shared.SoulPrefab,transform.position,Quaternion.identity);
 			Destroy(gameObject);
+		}else 
+		if (collision.collider.tag == "Player") {
+			Main.Shared.GameOver();
 		}
 	}
 }
